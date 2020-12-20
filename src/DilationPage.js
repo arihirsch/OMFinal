@@ -62,6 +62,7 @@ function DilationPage() {
             <div className="Page-header">
                 <h1>Time Dilation</h1>
                 <h4 className="Page-subheader">Move the slider to view the effects of motion on the passage of time</h4>
+                <h6 className="grey-text">Afterwards, scroll down and read the explanation!</h6>
             </div>
             <header className="App-header">
                 <Row className="counter-row">
@@ -87,6 +88,33 @@ function DilationPage() {
                         <h6>{(299792458 * (c_percentage / 100)).toFixed(2)} m/s</h6>
                         <h6>Clock period: {dilatedCounterPeriod.toFixed(0)} ms</h6>
                     </Col>
+                </Row>
+                <Row className="padding-top-10px padding-bottom-80px">
+                    <p className="grey-text padding-top-10px">
+                        As hard as it is to believe, given two clocks where one is in motion relative to the other, <br/>
+                        the clock in motion will tick slower. At human speeds, this difference is minute, so minute, <br/>
+                        in fact, that we will likely never notice it in our lives. <br/>
+                        <br/>
+                        Time dilation is, however, a real phenomenon. This tool lets you set a clock in motion <br/>
+                        at velocities as a percentage of the speed of light in order to see how time changes <br/>
+                        (relative to a clock at rest). Play with the slider on the right and watch the clocks <br/>
+                        go out of sync! Also, notice that at 100%, the clock stops ticking all together!<br/>
+                        <br/>
+                        This is a mathematically accurate representation of this phenomenon. The clock period <br/>
+                        for the clock on the left is set at 1000 milliseconds, or one second. The clock period <br/>
+                        on the right dynamically updates based on the position of the slider. The code takes <br/>
+                        the percentage set by the user on the slider and computes the following: <br/>
+                        v = c * (percentage / 100) <br/>
+                        t' = t / (sqrt(1 - (v^2/c^2))) <br/>
+                        Where: v is the relative velocity of the clock on the right, c is the speed of light, <br/>
+                        t is the left clock's clock period (1000ms), and t' is the right clock's clock period. <br/>
+                        <br/>
+                        This visualization should help the user see just how exponential this function is. <br/>
+                        Lower percentages make small differences in clock period. But higher percentages make <br/>
+                        a massive difference! When the slider is set to 100%, and v = c, the formula creates <br/>
+                        a division by zero error, so there is no clock period! Theoretically, at the speed of light,<br/>
+                        time wouldn't pass at all.
+                    </p>
                 </Row>
             </header>
         </div>

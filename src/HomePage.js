@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <div className="App">
         <div className="Page-header">
-            <h1>Origins and Meaning Visualizer</h1>
+            <h1>The Arrow of Time Playground</h1>
         </div>
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
@@ -21,9 +21,14 @@ function HomePage() {
                 </Col>
                 <Col>
                     <Link to="/entropy">
-                        <Button type="button" className="btn btn-primary btn-lg text-nowrap" size="lg">Penny Entropy</Button>
+                        <Button type="button" className="btn btn-primary btn-lg text-nowrap" size="lg">Entropy of Coins</Button>
                     </Link>
                 </Col>
+            </Row>
+            <Row className="padding-top-10px">
+                <p className="grey-text padding-top-10px">Made using React and React-Bootstrap. <br/>
+                Deployed with Vercel. <br/>
+                Check out the source code here: <a href="https://github.com/arihirsch/OMFinal">Github</a></p>
             </Row>
         </header>
     </div>
