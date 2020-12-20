@@ -5,7 +5,6 @@ import { Col, Row } from 'react-bootstrap';
 import Slider, { SliderTooltip } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-const { createSliderWithTooltip } = Slider;
 const { Handle } = Slider;
 
 let c_percentage = 0
@@ -34,7 +33,7 @@ function DilationPage() {
     const [counter, setCounter] = React.useState(0);
     const [dilatedCounter, setDilatedCounter] = React.useState(0);
 
-    if (counter == 0 && dilatedCounter == 0) {
+    if (counter === 0 && dilatedCounter === 0) {
         c_percentage = 0
     }
 
@@ -44,7 +43,7 @@ function DilationPage() {
     
     let c = 299792 // speed of light in milliseconds
     let dilatedCounterPeriod
-    if (c_percentage == 100) {
+    if (c_percentage === 100) {
         dilatedCounterPeriod = Infinity
     } 
     else {
@@ -55,7 +54,7 @@ function DilationPage() {
     }
 
     React.useEffect(() => {
-        setTimeout(() => setDilatedCounter(dilatedCounter + 1), dilatedCounterPeriod == Infinity ? 2147483647 : dilatedCounterPeriod);
+        setTimeout(() => setDilatedCounter(dilatedCounter + 1), dilatedCounterPeriod === Infinity ? 2147483647 : dilatedCounterPeriod);
         }, [dilatedCounter, dilatedCounterPeriod]);
 
     return (

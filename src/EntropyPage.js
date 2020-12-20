@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-import Slider, { SliderTooltip } from 'rc-slider';
-import 'rc-slider/assets/index.css';
 
 // let coins = []
 
